@@ -1490,7 +1490,7 @@ def test_get_param_combinations():
             },
         ),
     ]
-    output = get_param_combinations(input_params)
+    output = get_param_combinations(*input_params)
     expected = [
         *sorted(input_params, key=lambda x: x[1]["extra_args"]),
         pytest.param(
