@@ -1449,7 +1449,6 @@ def test_wrong_build_dir_raise_file_not_found(monkeypatch):
         )
 
 
-
 def test_no_mod_cmd_var_works(monkeypatch, data):
     # make a long command with paths that should trigger a trimming response
     cmd = f"{' '.join([str(data.outdir) for x in range(5)])} "

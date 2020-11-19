@@ -26,7 +26,7 @@ VALID_VERBOSITY_MODES = [
 ]
 
 
-def get_parser(tests_dir=None,return_subparsers=False):
+def get_parser(tests_dir=None, return_subparsers=False):
     parser = argparse.ArgumentParser(
         description="""
         run_afni_tests.py is a wrapper script to help run tests for the AFNI
@@ -180,6 +180,12 @@ def get_parser(tests_dir=None,return_subparsers=False):
     )
 
     pytest_mod.add_argument(
+        "--runall",
+        help=("Ignore all test markers and run everything."),
+        action="store_true",
+    )
+
+    pytest_mod.add_argument(
         "--create-sample-output",
         "-c",
         help=(
@@ -320,13 +326,15 @@ def get_parser(tests_dir=None,return_subparsers=False):
         help="Include a verbose explanation along with the examples",
     )
     if return_subparsers:
-        return parser,local, container, examples
+        return parser, local, container, examples
     else:
         return parser
 
 
 def parse_user_args(user_args=None, tests_dir=None):
-    parser, local, container, examples = get_parser(tests_dir=tests_dir,return_subparsers=True)
+    parser, local, container, examples = get_parser(
+        tests_dir=tests_dir, return_subparsers=True
+    )
     args = parser.parse_args(user_args or sys.argv[1:])
     if args.help:
         parser.print_help()
@@ -372,12 +380,12 @@ def parse_user_args(user_args=None, tests_dir=None):
     # runslow and runveryslow options are shortcuts... more extensive
     # selection should use -m and -k options (marker and keyword expressions).
     # The latter pair cannont be combined with the shortcuts.
-    if (args.runslow or args.runveryslow) and (
+    if (args.runall or args.runslow or args.runveryslow) and (
         args.marker_expression or args.filter_expr
     ):
         print(
             "ERROR: Cannot use marker or keyword filtering with the "
-            "--runslow or --runveryslow options. You can instead "
+            "--runslow, --runveryslow, --runall options. You can instead "
             "include the slow and veryslow markers in the expression "
             "passed to --marker-expression. e.g. run_afni_tests.py -m 'slow and "
             "combinations' "
@@ -680,6 +688,9 @@ def get_test_cmd_args(**kwargs):
 
     if kwargs.get("runveryslow"):
         cmd_args.append("--runveryslow")
+
+    if kwargs.get("runall"):
+        cmd_args.append("--runall")
 
     if kwargs.get("create_sample_output"):
         cmd_args.append("--create-sample-output")
