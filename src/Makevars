@@ -1,0 +1,2 @@
+PKG_CPPFLAGS = -I. -I/usr/X11R6/include -Icoxplot -Inifti/nifti2 -Inifti/niftilib -Inifti/nifticdf -Inifti/znzlib -I3DEdge/src -Irickr -Ileej3 -DHAVE_ZLIB -DHAVE_GIFTI -If2c -Wcomment -Wformat -DUSE_TRACING -DHAVE_XDBE
+PKG_LIBS = -L. -L/usr/X11R6/lib64 -lmri -lf2c -lXm -lXpm -lXext -lXmu -lXt -lSM -lICE -lX11 -lz -lexpat -lm -ldl -lc

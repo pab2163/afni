@@ -1,0 +1,111 @@
+/bin/rm -f LIBMRI_LINUX
+/usr/bin/gcc -O2 -m64 -fPIC -DREAD_WRITE_64 -DLINUX2 -Wcomment -Wformat -DUSE_TRACING -DHAVE_XDBE -D_GNU_SOURCE -DREPLACE_XT  -shared -fPIC -o libmri.so                                     \
+                -L. -L/usr/lib64  -Wl,-rpath='$ORIGIN'                                                    \
+                mri_cfft.o mri_complex_arith.o mri_fft_complex.o mri_free.o mri_max.o mri_new.o mri_read.o mri_swapbytes.o mri_dup.o mri_to_byte.o mri_to_complex.o mri_to_float.o mri_to_short.o mri_warp.o mri_write.o mri_float_func.o mri_edit.o mri_stat_seq.o mri_add_name.o mri_histog.o mri_nsize.o mri_lsqfit.o mri_sobel.o csfft.o mri_filt_fft.o mri_align.o mri_rota.o mri_thresh.o mri_to_mri.o mri_flippo.o mri_percents.o mri_stats.o mri_cat2D.o mri_transpose.o mri_shifter.o mcw_glob.o mri_2dalign.o mri_order.o mri_3dalign.o mri_to_rgb.o mcw_malloc.o mri_cut.o mri_overlay.o mri_copy.o mri_uncat2D.o cox_render.o mri_histobyte.o mri_aff2d.o debugtrace.o mri_zeropad.o mri_write_angif.o mri_histoshort.o mri_shift2D.o mri_drawing.o mri_coxplot.o mri_get_cmass.o mri_scale.o mri_write_analyze.o mri_to_rgba.o mri_rgba_compose.o mri_blur3d.o mri_dicom_hdr.o mri_read_dicom.o mri_read_stuff.o mri_flip3D.o mri_warp3D.o mri_fromstring.o ge4_header.o mri_equal.o mri_scalize.o mri_isgray.o mri_read_mpeg.o mri_entropy16.o mri_symbolize.o mri_colorsetup.o mri_warp3D_align.o mri_medianfilter.o mri_nstats.o mri_scaled_diff.o mri_matrix.o mri_genalign.o mri_clusterize.o mri_nbistats.o mri_fwhm.o mri_blur3d_variable.o mri_purger.o mri_counter.o mri_to_imarr.o mri_pcvector.o mri_fdrize.o mri_floatvec.o mri_sort.o mri_warpfield.o mri_dicom_stuff.o mri_check.o mri_allzero.o mri_subset.o mri_to_fvect.o mri_genalign_util.o rcmat.o dmat44.o mri_sharpness.o mri_genARMA11.o mri_catvol.o mri_polyfit.o mri_nwarp.o mri_extract.o mri_to_pval.o mri_sharpen3D.o thd_atr.o thd_dsetto1D.o thd_initalldir.o thd_reconpar.o thd_auxdata.o thd_editdaxes.o thd_initdblk.o thd_sarr.o thd_bstats.o thd_fdbrick.o thd_initdkptr.o thd_statpval.o thd_compress.o thd_fdto1D.o thd_initprefix.o thd_timeof.o thd_coords.o thd_fdto2D.o thd_initsess.o thd_warps.o thd_countb.o thd_filestuff.o thd_linecount.o thd_writeatr.o thd_delete.o thd_forcemalloc.o thd_loaddblk.o thd_writedblk.o thd_dsetdblk.o thd_get1D.o thd_manydset.o thd_writedset.o thd_dsetinsess.o  thd_idcode.o thd_opendset.o thd_zblock.o thd_dsetinslist.o thd_info.o thd_purgedblk.o thd_http.o thd_iochan.o thd_makefbuc.o thd_makefim.o thd_makefith.o thd_trusthost.o thd_rot3d.o thd_mastery.o thd_intlist.o thd_checkidc.o thd_floatscan.o thd_notes.o thd_makemask.o thd_shift2.o thd_1Dtodset.o thd_detrend.o thd_fitter.o thd_winsor.o thd_zeropad.o thd_rot3d_byte.o thd_shear3d.o thd_tmask.o thd_rotangles.o thd_ttest.o thd_center.o thd_mismatch.o thd_read_vecmat.o thd_tshift.o thd_newprefix.o thd_entropy16.o thd_dsetrow.o thd_rowfillin.o thd_fetchdset.o thd_getpathprogs.o thd_zfillin.o thd_ttatlas_query.o thd_dsetto3D.o thd_median.o thd_cliplevel.o thd_automask.o thd_outlier_count.o thd_correlate.o thd_autonudge.o thd_avts.o thd_mnicoords.o thd_strfunc.o thd_niftiwrite.o thd_analyzeread.o thd_ctfread.o thd_1Ddset.o thd_getorient.o thd_3Ddset.o thd_mattor.o thd_niftiread.o thd_mpegread.o thd_brainormalize.o thd_opentcat.o thd_nimlatr.o thd_dsetatr.o thd_logafni.o thd_dset_nbhd.o thd_vcheck.o thd_matdaxes.o thd_niml.o afni_vedit.o thd_fdrcurve.o thd_dset_to_vectim.o thd_bandpass.o thd_instacorr.o thd_svdblur.o thd_satcheck.o thd_dumdset.o ktaub.o bilinear_warp3D.o thd_table.o thd_atlas.o thd_warp_tables.o thd_lasso.o thd_mean_dset.o thd_despike_L1.o thd_Tcorr1D.o thd_openimage.o thd_remove_allzero.o thd_store_index.o thd_ljungbox.o thd_get_tcsv.o thd_vecwarp.o thd_StatsPDL.o edt_addbrick.o edt_blur.o edt_buildmask.o edt_checkargv.o edt_clust.o edt_clustarr.o edt_coerce.o edt_dsetitems.o edt_emptycopy.o edt_filtervol.o edt_help.o edt_onedset.o edt_scl2max.o edt_substbrick.o edt_volamax.o edt_zscore.o edt_fullcopy.o edt_calcmask.o edt_volpad.o edt_sortmask.o edt_clust2.o edt_wodcopy.o edt_clustalpha.o edt_geomcon.o edt_floatize.o                          \
+                niml_b64.o     niml_element.o   niml_elemio.o niml_registry.o niml_util.o    niml_byteorder.o niml_header.o niml_malloc.o niml_rowtype.o niml_uuid.o      niml_do.o     niml_htable.o niml_md5.o     niml_url.o       niml_stream.o niml_struct.o niml_dataset.o niml_vector.o    niml_stat.o   niml_dtable.o niml_sucker.o cs_sort_fi.o cs_sort_di.o cs_symeig.o cs_sort_ii.o cs_sort_ff.o cs_addto_args.o multivector.o afni_environ.o cs_qmed.o cl2.o cs_sort_fv.o cs_laguerre.o machdep.o cs_qhull.o afni_logger.o cl1.o cs_misc.o powell_int.o powell_newuoa.o cs_sort_dv.o rhdd.o zfun.o cs_pv.o cs_sort_iv.o cs_sort_d.o cs_fgets.o svdlib.o cs_gamfit.o cs_sort_str.o cs_playsound.o eis_bakvec.o eis_balanc.o eis_balbak.o eis_bandr.o eis_bandv.o eis_bisect.o eis_bqr.o eis_cbabk2.o eis_cbal.o eis_cdiv.o eis_cg.o eis_ch.o eis_cinvit.o eis_combak.o eis_comhes.o eis_comlr.o eis_comlr2.o eis_comqr.o eis_comqr2.o eis_cortb.o eis_corth.o eis_csroot.o eis_elmbak.o eis_elmhes.o eis_eltran.o eis_epslon.o eis_figi.o eis_figi2.o eis_hqr.o eis_hqr2.o eis_htrib3.o eis_htribk.o eis_htrid3.o eis_htridi.o eis_imtql1.o eis_imtql2.o eis_imtqlv.o eis_invit.o eis_minfit.o eis_ortbak.o eis_orthes.o eis_ortran.o eis_pythag.o eis_qzhes.o eis_qzit.o eis_qzval.o eis_qzvec.o eis_ratqr.o eis_rebak.o eis_rebakb.o eis_reduc.o eis_reduc2.o eis_rg.o eis_rgg.o eis_rs.o eis_rsb.o eis_rsg.o eis_rsgab.o eis_rsgba.o eis_rsm.o eis_rsp.o eis_rst.o eis_rt.o eis_svd_slow.o eis_svd.o eis_tinvit.o eis_tql1.o eis_tql2.o eis_tqlrat.o eis_trbak1.o eis_trbak3.o eis_tred1.o eis_tred2.o eis_tred3.o eis_tridib.o eis_tsturm.o           \
+                suma_afni_surface.o suma_datasets.o suma_utils.o suma_string_manip.o suma_algorithms.o afni_suma.o vol2surf.o nifti2_io.o znzlib.o list_struct.o nifti_statlib.o nifticdf.o r_new_resam_dset.o r_idisp.o r_misc.o matrix.o gifti_choice.o misc_math.o parser_int.o afni_warp.o afni_slice_byte.o afni_slice_short.o afni_slice_float.o afni_slice_complex.o afni_slice_rgbyte.o parser.o pbar_color_defs.o afni_ports.o thd_selenium_off.o   \
+
+( cd ptaylor ;	\
+./@MakeLocalMake	;\
+make clean libtracktools.a  ;	\
+/bin/cp -f libtracktools.a ../;	\
+cd ../	;		)
+Got relative path, append
+Moved old Makefile to Makefile.back.2020.08.20
+Local Makefile created.
+make[1]: Entering directory '/home/laurenpd/afniDev/afni/git/afni/src/ptaylor'
+/bin/rm -f *.o *.a 3dTrackID 3dProbTrackID 3dDWUncert 3dReHo 3dRSFC map_TrackID 3dROIMaker 3dMatch 3dNetCorr 1dDW_Grad_o_Mat 1dDW_Grad_o_Mat++ 3dEigsToDT 3dDTtoNoisyDWI 3dTORTOISEtoHere 3dVecRGB_to_HSL 3ddot_beta 3dLombScargle 3dAmpToRSFC 3dSpaceTimeCorr 3dZipperZapper 3dSliceNDice 3dClusterize
+/usr/bin/gcc -O2 -m64 -fPIC -DREAD_WRITE_64 -DLINUX2 -Wcomment -Wformat -DUSE_TRACING -DHAVE_XDBE -D_GNU_SOURCE -DREPLACE_XT    -I. -I/usr/X11R6/include  -I/usr/local/include -I../nifti/nifti2 -I../nifti/niftilib -I../nifti/nifticdf -I../nifti/znzlib -I../3DEdge/src -I../rickr -I../ -I../niml/ -Igts/src -I../SUMA/ -I../f2c -c DoTrackit.c 
+DoTrackit.c:6:10: fatal error: gsl/gsl_randist.h: No such file or directory
+ #include <gsl/gsl_randist.h>
+          ^~~~~~~~~~~~~~~~~~~
+compilation terminated.
+Makefile.ptaylor.INCLUDE:68: recipe for target 'DoTrackit.o' failed
+make[1]: *** [DoTrackit.o] Error 1
+make[1]: Leaving directory '/home/laurenpd/afniDev/afni/git/afni/src/ptaylor'
+/bin/cp: cannot stat 'libtracktools.a': No such file or directory
+echo PKG_CPPFLAGS = -I. -I/usr/X11R6/include  -Icoxplot -Inifti/nifti2 -Inifti/niftilib -Inifti/nifticdf -Inifti/znzlib -I3DEdge/src -Irickr -Ileej3 -DHAVE_ZLIB -DHAVE_GIFTI -If2c -Wcomment -Wformat -DUSE_TRACING -DHAVE_XDBE -D_GNU_SOURCE -DREPLACE_XT  > Makevars ;            \
+echo PKG_LIBS = -L. -L/usr/lib64  -Wl,-rpath='$ORIGIN'        \
+          | sed s/.ORIGIN/\''$$ORIGIN'\'/ >> Makevars ;
+( if which R >/dev/null ; then \
+R CMD SHLIB -o R_io.so R_io.c ; \
+else echo WARNING: Cannot build R_io.so because R is not installed;\
+fi ; )
+make[1]: Entering directory '/home/laurenpd/afniDev/afni/git/afni/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/laurenpd/afniDev/afni/git/afni/src'
+/bin/rm -f afni
+/usr/bin/gcc -O2 -m64 -fPIC -DREAD_WRITE_64 -DLINUX2 -Wcomment -Wformat -DUSE_TRACING -DHAVE_XDBE -D_GNU_SOURCE -DREPLACE_XT  -DWHATS_MY_EXEPATH -o afni afni.o afni_func.o afni_widg.o afni_warp.o afni_fimmer.o afni_slice_short.o afni_slice_float.o afni_filer.o afni_slice_byte.o  afni_slice_complex.o afni_pcor.o afni_pcor_float.o afni_transforms.o pbar.o afni_graph.o afni_plugin.o afni_cluster.o parser.o parser_int.o afni_plugout.o afni_fimfunc.o afni_setup.o afni_receive.o mcw_graf.o afni_splash.o afni_pplug_env.o afni_pplug_2dfunc.o afni_friends.o afni_ttren.o afni_pplug_1dfunc.o afni_driver.o afni_niml.o afni_sumafunc.o afni_slice_rgbyte.o afni_version.o afni_lock.o afni_vol2surf.o afni_pplug_instacorr.o afni_pplug_instacalc.o afni_pplug_tstat.o afni_whelp.o whats_my_exepath.o -rdynamic -L. -L/usr/lib64  -Wl,-rpath='$ORIGIN' -lmrix -lcoxplot -lmri  libXmHTML.a libjpeg.a -lfontconfig -lXft -lmri -lf2c -lXm -lXpm -lXext -lXmu -lXt -lSM -lICE -lX11 -lpng -lz -lexpat   -lm  -ldl -lc -lm -lc
+libXmHTML.a(LZWStream.o): In function `LZWStreamInit':
+(.text+0xe14): warning: the use of `tmpnam' is dangerous, better use `mkstemp'
+/bin/rm -f from3d
+/usr/bin/gcc -O2 -m64 -fPIC -DREAD_WRITE_64 -DLINUX2 -Wcomment -Wformat -DUSE_TRACING -DHAVE_XDBE -D_GNU_SOURCE -DREPLACE_XT  -o from3d from3d.o -L. -L/usr/lib64  -Wl,-rpath='$ORIGIN' 
+from3d.o: In function `F3D_initialize_user_data':
+from3d.c:(.text+0xb3): undefined reference to `machdep'
+from3d.c:(.text+0xc5): undefined reference to `AFNI_logger'
+from3d.c:(.text+0x3ca): undefined reference to `ERROR_exit'
+from3d.c:(.text+0x3e2): undefined reference to `ERROR_exit'
+from3d.c:(.text+0x3fa): undefined reference to `ERROR_exit'
+from3d.c:(.text+0x458): undefined reference to `machdep'
+from3d.c:(.text+0x46a): undefined reference to `AFNI_logger'
+from3d.c:(.text+0x513): undefined reference to `ERROR_exit'
+from3d.c:(.text+0x573): undefined reference to `ERROR_exit'
+from3d.c:(.text+0x5d7): undefined reference to `ERROR_exit'
+from3d.c:(.text+0x5f8): undefined reference to `ERROR_exit'
+from3d.c:(.text+0x61d): undefined reference to `ERROR_exit'
+from3d.o:from3d.c:(.text+0x642): more undefined references to `ERROR_exit' follow
+from3d.o: In function `main':
+from3d.c:(.text.startup+0x2c): undefined reference to `machdep_be_quiet'
+from3d.c:(.text.startup+0x39): undefined reference to `machdep_be_quiet'
+from3d.c:(.text.startup+0x70): undefined reference to `DBG_trace'
+from3d.c:(.text.startup+0x9d): undefined reference to `DBG_fp'
+from3d.c:(.text.startup+0xb1): undefined reference to `NI_clock_time'
+from3d.c:(.text.startup+0xb8): undefined reference to `DBG_sigfunc'
+from3d.c:(.text.startup+0x10d): undefined reference to `DBG_stoff'
+from3d.c:(.text.startup+0x11e): undefined reference to `DBG_num'
+from3d.c:(.text.startup+0x125): undefined reference to `DBG_rout'
+from3d.c:(.text.startup+0x133): undefined reference to `DBG_trace'
+from3d.c:(.text.startup+0x14e): undefined reference to `DBG_hist'
+from3d.c:(.text.startup+0x16a): undefined reference to `NI_clock_time'
+from3d.c:(.text.startup+0x1c3): undefined reference to `DBG_stoff'
+from3d.c:(.text.startup+0x1d3): undefined reference to `hist_status'
+from3d.c:(.text.startup+0x1e5): undefined reference to `nhist_status'
+from3d.c:(.text.startup+0x230): undefined reference to `last_status'
+from3d.c:(.text.startup+0x240): undefined reference to `AFNI_prefilter_args'
+from3d.c:(.text.startup+0x247): undefined reference to `machdep'
+from3d.c:(.text.startup+0x2ae): undefined reference to `THD_open_dataset'
+from3d.c:(.text.startup+0x2ce): undefined reference to `THD_load_datablock'
+from3d.c:(.text.startup+0x3b3): undefined reference to `mri_new_vol_empty'
+from3d.c:(.text.startup+0x479): undefined reference to `mri_data_pointer'
+from3d.c:(.text.startup+0x488): undefined reference to `mri_fix_data_pointer'
+from3d.c:(.text.startup+0x54c): undefined reference to `mri_write_raw'
+from3d.c:(.text.startup+0x55d): undefined reference to `mri_free'
+from3d.c:(.text.startup+0x5ad): undefined reference to `THD_delete_3dim_dataset'
+from3d.c:(.text.startup+0x5c1): undefined reference to `mri_data_pointer'
+from3d.c:(.text.startup+0x5d0): undefined reference to `mri_fix_data_pointer'
+from3d.c:(.text.startup+0x5e1): undefined reference to `mri_data_pointer'
+from3d.c:(.text.startup+0x5f0): undefined reference to `mri_fix_data_pointer'
+from3d.c:(.text.startup+0x601): undefined reference to `mri_data_pointer'
+from3d.c:(.text.startup+0x60f): undefined reference to `mri_fix_data_pointer'
+from3d.c:(.text.startup+0x621): undefined reference to `mri_data_pointer'
+from3d.c:(.text.startup+0x631): undefined reference to `mri_fix_data_pointer'
+from3d.c:(.text.startup+0x641): undefined reference to `mri_write'
+from3d.c:(.text.startup+0x684): undefined reference to `mri_nsize'
+from3d.c:(.text.startup+0x69a): undefined reference to `mri_to_float'
+from3d.c:(.text.startup+0x6b0): undefined reference to `mri_free'
+from3d.c:(.text.startup+0x6cc): undefined reference to `mri_to_float'
+from3d.c:(.text.startup+0x6ea): undefined reference to `ERROR_exit'
+from3d.c:(.text.startup+0x704): undefined reference to `DBG_fp'
+from3d.c:(.text.startup+0x742): undefined reference to `INFO_message'
+from3d.c:(.text.startup+0x766): undefined reference to `INFO_message'
+from3d.c:(.text.startup+0x777): undefined reference to `ERROR_exit'
+from3d.c:(.text.startup+0x809): undefined reference to `ERROR_exit'
+from3d.c:(.text.startup+0x81c): undefined reference to `ERROR_exit'
+from3d.c:(.text.startup+0x842): undefined reference to `ERROR_exit'
+from3d.c:(.text.startup+0x855): undefined reference to `ERROR_exit'
+from3d.o:from3d.c:(.text.startup+0x890): more undefined references to `ERROR_exit' follow
+from3d.o: In function `main':
+from3d.c:(.text.startup+0x8ba): undefined reference to `DBG_setup_hist_status'
+collect2: error: ld returned 1 exit status
+Makefile.INCLUDE:884: recipe for target 'from3d' failed
+make: *** [from3d] Error 1

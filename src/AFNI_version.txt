@@ -1,0 +1,3 @@
+AFNI_20.3.01
+linux_ubuntu_12_64
+Nov 20 2020
